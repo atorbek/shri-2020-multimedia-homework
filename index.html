@@ -5,18 +5,44 @@
     <title>Test streams</title>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <script src="initVideo.js"></script>
-    <script src="fullScreen.js"></script>
+    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
-
-<div class="videos">
-    <video id="video-1" class="video" controls muted autoplay></video>
-    <video id="video-2" class="video" controls muted autoplay></video>
-    <video id="video-3" class="video" controls muted autoplay></video>
-    <video id="video-4" class="video" controls muted autoplay></video>
+<div class="media">
+    <div class="videos">
+        <div class=" videos__content">
+            <div class="grid grid_col-gap_half grid_row-gap_half grid_m-columns_6">
+                <div class="videos__item grid__fraction grid__fraction_m-col_3">
+                    <video id="video-1" class="video" muted></video>
+                </div>
+                <div class="videos__item grid__fraction grid__fraction_m-col_3">
+                    <video id="video-2" class="video" muted></video>
+                </div>
+                <div class="videos__item grid__fraction grid__fraction_m-col_3">
+                    <video id="video-3" class="video" muted></video>
+                </div>
+                <div class="videos__item grid__fraction grid__fraction_m-col_3">
+                    <video id="video-4" class="video" muted></video>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="controls controls_hidden">
-        <button class="controls__button">Все камеры</button>
+        <div class="controls__content">
+            <div class="contrast">
+                <label for="contrast-input">Контраст</label>
+                <input type="range" id="contrast-input" min="0" max="2" step="0.01" value="1">
+            </div>
+            <button class="cameras">Все камеры</button>
+            <div class="bright">
+                <label for="bright-input">Яркость</label>
+                <input type="range" id="bright-input" min="0" max="2" step="0.01" value="1">
+            </div>
+            <div class="volume">
+                <div class="volume__value"></div>
+            </div>
+        </div>
     </div>
 </div>
 
