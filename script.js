@@ -117,7 +117,9 @@
       this.update = () => {
         requestAnimationFrame(this.update);
         this._analyser.getByteFrequencyData(self._bands);
-        self._cb(`${Math.round((Math.max(...this._bands) / 256) * 100)}%`);
+
+        const sum = this._bands.reduce((acc, el) => acc + el, 0);
+        self._cb(`${(sum / 256 / this._bands.length) * 100}%`);
       };
     }
   });
